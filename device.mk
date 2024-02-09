@@ -128,12 +128,24 @@ PRODUCT_COPY_FILES += \
 
 # Overlay
 PRODUCT_PACKAGES += \
-    ApertureResMondrian \
+    CarrierConfigResCommon \
+    FrameworksResCommon \
+    SettingsResCommon \
+    SystemUIResCommon \
+    TelecommResCommon \
+    TelephonyResCommon \
+    WifiResCommon
+
+PRODUCT_PACKAGES += \
     FrameworksResMondrian \
     SettingsProviderResMondrian \
     SettingsResMondrian \
     SystemUIResMondrian \
     WifiResMondrian
+
+PRODUCT_PACKAGES += \
+    WifiResTarget \
+    WifiResTarget_spf
 
 # Power
 PRODUCT_PACKAGES += \
