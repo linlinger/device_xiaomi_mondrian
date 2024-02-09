@@ -1,5 +1,3 @@
-Copyright (C) 2022-2023 The LineageOS Project
-
 Device configuration for POCO F5 Pro / Xiaomi Redmi K60
 =========================================
 
