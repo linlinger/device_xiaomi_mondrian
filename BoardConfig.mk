@@ -35,22 +35,22 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # HIDL
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/hidl/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/hidl/compatibility_matrix.xml
 
 DEVICE_MANIFEST_SKUS := \
     cape \
     taro
 DEVICE_MANIFEST_CAPE_FILES := \
-    $(COMMON_PATH)/hidl/manifest_taro.xml \
-    $(COMMON_PATH)/hidl/manifest_xiaomi.xml
+    $(DEVICE_PATH)/hidl/manifest_taro.xml \
+    $(DEVICE_PATH)/hidl/manifest_xiaomi.xml
 DEVICE_MANIFEST_TARO_FILES := $(DEVICE_MANIFEST_CAPE_FILES)
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(COMMON_PATH)/hidl/vendor_framework_compatibility_matrix.xml \
-    $(COMMON_PATH)/hidl/xiaomi_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/hidl/vendor_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/hidl/xiaomi_framework_compatibility_matrix.xml \
     vendor/aosp/config/device_framework_matrix.xml
 	
 # Init
@@ -86,14 +86,14 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PREBUILT_DIR)/v
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE :=  $(KERNEL_PREBUILT_DIR)/vendor_dlkm/modules.blocklist
 
 # Power
-TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
+TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Properties
-TARGET_ODM_PROP += $(COMMON_PATH)/properties/odm.prop
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/properties/product.prop
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/properties/system.prop
-TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/properties/system_ext.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/properties/vendor.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/properties/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 
 # Recovery
 #namespace definition for librecovery_updater
@@ -102,11 +102,18 @@ SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+
+# Sepolicy
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Screen density
 TARGET_SCREEN_DENSITY := 560
