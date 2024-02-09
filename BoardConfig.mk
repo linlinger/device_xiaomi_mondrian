@@ -34,6 +34,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+# HIDL
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/hidl/compatibility_matrix.xml
+
+DEVICE_MANIFEST_SKUS := \
+    cape \
+    taro
+DEVICE_MANIFEST_CAPE_FILES := \
+    $(COMMON_PATH)/hidl/manifest_taro.xml \
+    $(COMMON_PATH)/hidl/manifest_xiaomi.xml
+DEVICE_MANIFEST_TARO_FILES := $(DEVICE_MANIFEST_CAPE_FILES)
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(COMMON_PATH)/hidl/vendor_framework_compatibility_matrix.xml \
+    $(COMMON_PATH)/hidl/xiaomi_framework_compatibility_matrix.xml \
+    vendor/aosp/config/device_framework_matrix.xml
+	
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mondrian
+TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_mondrian
+
 # Kernel
 TARGET_PREBUILT_DTB := $(KERNEL_PREBUILT_DIR)/dtbs/dtb
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PREBUILT_DIR)/dtbs
@@ -61,10 +81,6 @@ BOARD_VENDOR_RAMDISK_FRAGMENT.dlkm.KERNEL_MODULE_DIRS := top
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PREBUILT_DIR)/vendor_dlkm/*.ko)
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PREBUILT_DIR)/vendor_dlkm/modules.load))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE :=  $(KERNEL_PREBUILT_DIR)/vendor_dlkm/modules.blocklist
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mondrian
-TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_mondrian
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
