@@ -135,6 +135,13 @@ PRODUCT_PACKAGES += \
     SystemUIResMondrian \
     WifiResMondrian
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti
+
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/power/config/taro/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
 # PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.xiaomi_mondrian

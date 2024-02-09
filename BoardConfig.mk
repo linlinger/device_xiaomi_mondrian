@@ -85,6 +85,9 @@ BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PREBUILT_DIR)/vendor_dlkm/*.k
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PREBUILT_DIR)/vendor_dlkm/modules.load))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE :=  $(KERNEL_PREBUILT_DIR)/vendor_dlkm/modules.blocklist
 
+# Power
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
 
