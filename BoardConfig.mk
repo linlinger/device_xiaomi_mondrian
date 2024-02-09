@@ -25,6 +25,10 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mondrian
+TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_mondrian
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
 
