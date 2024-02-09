@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
     SystemUIResMondrian \
     WifiResMondrian
 
+# PowerShare
+PRODUCT_PACKAGES += \
+    vendor.lineage.powershare@1.0-service.xiaomi_mondrian
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.xiaomi
