@@ -22,6 +22,7 @@ import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.doze.AodBrightnessService;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.doze.PocketService;
+import org.lineageos.settings.display.ColorService;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 
@@ -48,6 +49,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         // Pocket
         PocketService.startService(context);
+
+        // DisplayFeature
+        ColorService.startService(context);
 
         // NFC
         NfcCameraService.startService(context);

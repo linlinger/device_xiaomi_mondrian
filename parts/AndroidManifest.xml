@@ -158,6 +158,12 @@
         </activity>
 
         <service
+            android:name=".display.ColorService"
+            android:exported="true"
+            android:permission="ColorService">
+        </service>
+        
+        <service
             android:name=".camera.NfcCameraService"
             android:exported="true"
             android:permission="NfcCameraService">

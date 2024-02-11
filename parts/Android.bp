@@ -20,6 +20,7 @@ android_app {
         "androidx.core_core",
         "org.lineageos.settings.resources",
         "SettingsLib",
+        "vendor.xiaomi.hardware.displayfeature-V1.0-java",
     ],
 
     optimize: {
