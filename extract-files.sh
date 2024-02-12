@@ -77,6 +77,12 @@ function blob_fixup() {
         vendor/bin/hw/android.hardware.security.keymint-service-qti)
             "${PATCHELF}" --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
             ;;
+        system/lib64/libcamera_algoup_jni.xiaomi.so|system/lib64/libcamera_mianode_jni.xiaomi.so)
+            "${PATCHELF}" --add-needed "libgui_shim_miuicamera.so" "${2}"
+            ;;
+        system/lib64/libmicampostproc_client.so)
+            "${PATCHELF}" --remove-needed "libhidltransport.so" "${2}"
+            ;;
         vendor/etc/camera/mondrian_enhance_motiontuning.xml|vendor/etc/camera/mondrian_motiontuning.xml)
             sed -i 's/xml=version/xml version/g' "${2}"
             ;;
