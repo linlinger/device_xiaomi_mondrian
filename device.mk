@@ -215,9 +215,9 @@ PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8450/display/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/displayconfigs/display_id_4630946545580055170.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946545580055170.xml \
-    $(LOCAL_PATH)/configs/displayconfigs/resolution_switch_process_list_backup.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/resolution_switch_process_list_backup.xml \
-    $(LOCAL_PATH)/configs/displayconfigs/thermal_brightness_control.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/thermal_brightness_control.xml
+    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946545580055170.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946545580055170.xml \
+    $(LOCAL_PATH)/configs/displayconfig/resolution_switch_process_list_backup.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/resolution_switch_process_list_backup.xml \
+    $(LOCAL_PATH)/configs/displayconfig/thermal_brightness_control.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/thermal_brightness_control.xml
 
 # Dolby
 PRODUCT_COPY_FILES += \
