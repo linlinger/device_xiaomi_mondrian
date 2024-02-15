@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=marble
-VENDOR=mondrian
+DEVICE=mondrian
+VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -74,9 +74,6 @@ function blob_fixup() {
         vendor/lib/hw/displayfeature.default.so)
             "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
             ;;
-        vendor/bin/hw/android.hardware.security.keymint-service-qti)
-            "${PATCHELF}" --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
-            ;;
         system/lib64/libcamera_algoup_jni.xiaomi.so|system/lib64/libcamera_mianode_jni.xiaomi.so)
             "${PATCHELF}" --add-needed "libgui_shim_miuicamera.so" "${2}"
             ;;
@@ -92,16 +89,10 @@ function blob_fixup() {
     esac
 }
 
-# If we're being sourced by the common script that we called,
-# stop right here. No need to go down the rabbit hole.
-if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
-    return
-fi
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
 
-set -e
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
+        "${KANG}" --section "${SECTION}"
 
-export DEVICE=mondrian
-export DEVICE_COMMON=sm8450-common
-export VENDOR=xiaomi
-
-"./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
+"${MY_DIR}/setup-makefiles.sh"
