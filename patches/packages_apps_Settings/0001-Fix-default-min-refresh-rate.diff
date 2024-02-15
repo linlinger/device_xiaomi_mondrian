@@ -1,0 +1,13 @@
+diff --git a/src/com/android/settings/display/RefreshRateUtils.java b/src/com/android/settings/display/RefreshRateUtils.java
+index 7b99431739..59ed0c93e2 100644
+--- a/src/com/android/settings/display/RefreshRateUtils.java
++++ b/src/com/android/settings/display/RefreshRateUtils.java
+@@ -30,7 +30,7 @@ public class RefreshRateUtils {
+     private static final String TAG = "RefreshRateUtils";
+ 
+     static final int DEFAULT_REFRESH_RATE = 60;
+-    static final int DEFAULT_MIN_REFRESH_RATE = 0; // matches fwb. should be 60 though?
++    static final int DEFAULT_MIN_REFRESH_RATE = 60; // matches fwb. should be 60 though?
+ 
+     private Context mContext;
+     private List<Integer> mRefreshRates;
