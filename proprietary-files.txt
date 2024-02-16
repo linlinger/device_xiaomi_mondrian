@@ -1619,10 +1619,8 @@ vendor/lib/libstagefrightdolby.so
 # Dolby music
 system/lib/libdolbyottcontrol.so
 system/lib/libdovi_omx.so
-system/lib/vendor.dolby.hardware.dms@2.0.so
 system/lib64/libdolbyottcontrol.so
 system/lib64/libdovi_omx.so
-system/lib64/vendor.dolby.hardware.dms@2.0.so
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/etc/dolby/dax-default.xml
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
