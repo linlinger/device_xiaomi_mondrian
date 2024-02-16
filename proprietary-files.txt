@@ -1618,7 +1618,7 @@ vendor/lib/libstagefrightdolby.so
 
 # Dolby music apps  - from 9R OOS 11.2.8.8
 -system_ext/priv-app/DaxUI/DaxUI.apk|89e8ceabb19458b872eed0560a627eb2ff4c4dc4
--system_ext/priv-app/daxService/daxService.apk|ed1de719afc7181a7e896e0eeaf14edc00761c21
+-system_ext/priv-app/daxService/daxService.apk|68b181dad8a25da752f71c77610772b695303ca0
 
 # Dolby music
 system/lib/libdolbyottcontrol.so
