@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/evolution_mondrian.mk
+    $(LOCAL_DIR)/aosp_mondrian.mk
 
 COMMON_LUNCH_CHOICES := \
-    evolution_mondrian-user \
-    evolution_mondrian-userdebug \
-    evolution_mondrian-eng
+    aosp_mondrian-user \
+    aosp_mondrian-userdebug \
+    aosp_mondrian-eng
