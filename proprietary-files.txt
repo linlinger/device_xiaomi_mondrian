@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from mondrian V14.0.6.0.TMNMIXM
+# All unpinned blobs below are extracted from HyperOS V816.0.3.0.UMNMIXM
 
 # ACDB
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb
@@ -1766,6 +1766,7 @@ vendor/bin/hw/android.hardware.gnss-aidl-service-qti
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/mlid
+vendor/bin/qcc-trd|2221776a5d3ef979e8ad828f571ba60bb6508364
 vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
@@ -1835,6 +1836,7 @@ vendor/lib/libxtadapter.so
 vendor/lib/libxtwifi_server_protocol.so
 vendor/lib/libxtwifi_server_protocol_uri_v3.so
 vendor/lib/vendor.qti.gnss-service.so
+vendor/lib/vendor.qti.gnss-V3-ndk_platform.so
 vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib64/libMiVDR.so
@@ -1883,6 +1885,7 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_server_protocol.so
 vendor/lib64/libxtwifi_server_protocol_uri_v3.so
 vendor/lib64/vendor.qti.gnss-service.so
+vendor/lib64/vendor.qti.gnss-V3-ndk_platform.so
 
 # Graphics
 vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml
@@ -2603,7 +2606,7 @@ product/etc/permissions/UimService.xml
 product/framework/uimgbalibrary.jar
 product/framework/uimgbamanagerlibrary.jar
 product/framework/uimservicelibrary.jar
-system_ext/app/ImsRcsService/ImsRcsService.apk
+system_ext/app/ImsRcsService/ImsRcsService.apk|93877b05f97ce9691f344b50512461b67a981b95
 system_ext/app/QtiTelephony/QtiTelephony.apk|3aac552cf56937d93ffce7d29311e24faefe08b7
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|cb062f654199b82710e9952ff32cd9a4001c7e7c
 system_ext/etc/permissions/qcrilhook.xml
@@ -2615,12 +2618,15 @@ system_ext/framework/vendor.qti.ims.connection-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar
+system_ext/framework/vendor.qti.ims.factoryaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.rcssip-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.rcssip-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.rcssip-V1.2-java.jar
+system_ext/framework/vendor.qti.ims.rcssipaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar
+system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar
 system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
@@ -2628,6 +2634,7 @@ system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libdiag_system.so
 system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
+system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
 system_ext/priv-app/ims/ims.apk|e97c66e99b4d0590d366d35a3bd1dbe6f1c65131
