@@ -33,4 +33,15 @@
 
     <!-- Whether to enable Lineage Health Service -->
     <bool name="config_lineageHealthSupported">true</bool>
+
+    <!-- Build properties from a GMS certified device against current platform SPL level -->
+    <string-array name="config_certifiedBuildProperties" translatable="false">
+        <item>PRODUCT:griffin_retcn</item>
+        <item>DEVICE:griffin</item>
+        <item>MANUFACTURER:motorola</item>
+        <item>BRAND:motorola</item>
+        <item>MODEL:XT1650-05</item>
+        <item>FINGERPRINT:motorola/griffin_retcn/griffin:6.0.1/MCC24.246-37/42:user/release-keys</item>
+        <item>VERSION.SECURITY_PATCH:2016-07-01</item>
+    </string-array>
 </resources>
